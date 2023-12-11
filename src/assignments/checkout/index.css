@@ -1,0 +1,11 @@
+.grid {
+  display: flex;
+  column-gap: 50px;
+}
+
+.queue {
+  width: 50px;
+  background-color: red;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
