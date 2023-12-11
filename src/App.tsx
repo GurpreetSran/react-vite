@@ -1,10 +1,10 @@
 import "./App.css";
-import Test from "./components/Test";
+import Assignment from "./assignments/assignment-1";
 
 function App() {
   return (
     <>
-      <Test />
+      <Assignment />
     </>
   );
 }
