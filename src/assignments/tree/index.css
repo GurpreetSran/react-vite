@@ -1,0 +1,12 @@
+.container {
+  width: 200px;
+}
+
+.item {
+  display: inline-block;
+  width: 200px;
+}
+
+ul {
+  text-align: left;
+}
