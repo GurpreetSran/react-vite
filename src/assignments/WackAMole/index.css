@@ -1,0 +1,29 @@
+.grid-container div {
+  border: 1px solid black;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid black;
+}
+.root {
+  width: 500px;
+  margin: auto;
+}
+
+.mole {
+  height: 50px !important;
+  width: 50px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+}

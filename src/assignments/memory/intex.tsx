@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./index.css";
 
 // gerenate array of 1 to 6
-const randomArray = new Array(6).fill(0).map((_val, index) => index + 1);
+const randomArray = new Array(8).fill(0).map((_val, index) => index + 1);
 
 // Copy Array as we need pair for each number
 // And shuffle it
@@ -18,6 +18,15 @@ const doubleArray: number[] = [...randomArray, ...randomArray].sort(() =>
 ]
 */
 
+function maxProfit(prices: number[]): number {
+  const findMinIndex = prices.findIndex((p) => p === Math.min(...prices));
+  const min = prices[findMinIndex];
+  const max = Math.max(...prices.splice(findMinIndex));
+  return max - min;
+}
+
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
 type SelectedItem = {
   rowIndex: number;
   colIndex: number;
@@ -28,7 +37,7 @@ const gridArray: number[][] = [];
 
 let counter = 0;
 
-for (let rows = 0; rows < 3; rows++) {
+for (let rows = 0; rows < 4; rows++) {
   const rowItems = [];
   for (let cols = 0; cols < 4; cols++) {
     rowItems[cols] = doubleArray[counter];
@@ -45,6 +54,16 @@ const MemoryGame: React.FC = () => {
 
   useEffect(() => {
     if (selectedItems.length === 2) {
+      // Prevent duplicate click
+      if (
+        selectedItems[0].rowIndex === selectedItems[1].rowIndex &&
+        selectedItems[0].colIndex === selectedItems[1].colIndex
+      ) {
+        setTurns(turns + 1);
+        setSelectedItems([]);
+        return;
+      }
+
       if (selectedItems[0].value === selectedItems[1].value) {
         setGuessedItems((guessedItems) => [...guessedItems, ...selectedItems]);
         alert("great job");
