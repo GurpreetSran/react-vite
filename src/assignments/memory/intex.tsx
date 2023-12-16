@@ -50,6 +50,7 @@ const MemoryGame: React.FC = () => {
   const [grid, setGrid] = useState(gridArray);
   const [guessedItems, setGuessedItems] = useState<SelectedItem[]>([]);
   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
+  const [status, setStatus] = useState("");
   const [turns, setTurns] = useState(0);
 
   useEffect(() => {
@@ -66,9 +67,9 @@ const MemoryGame: React.FC = () => {
 
       if (selectedItems[0].value === selectedItems[1].value) {
         setGuessedItems((guessedItems) => [...guessedItems, ...selectedItems]);
-        alert("great job");
+        setStatus("great job");
       } else {
-        alert("Try again");
+        setStatus("Try again");
       }
 
       setSelectedItems([]);
@@ -103,7 +104,7 @@ const MemoryGame: React.FC = () => {
       el.style.visibility = "visible";
       setTimeout(() => {
         el.style.visibility = "hidden";
-      }, 1000);
+      }, 500);
     }
   };
 
@@ -137,6 +138,7 @@ const MemoryGame: React.FC = () => {
           </div>
         );
       })}
+      <h2>{status}</h2>
     </div>
   );
 };

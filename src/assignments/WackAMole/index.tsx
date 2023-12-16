@@ -2,22 +2,11 @@ import { useCallback, useEffect, useState } from "react";
 import "./index.css";
 import Mole from "./Mole";
 
-const GRID = [
-  false,
-  false,
-  false,
-  true,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-];
+// Create an array of 19 elements with false
+const GRID = Array.from({ length: 24 }, () => false);
+GRID.push(true);
 
-const SPEED = 780;
+const SPEED = 900;
 
 const WackAMole = () => {
   const [grid, setGrid] = useState(GRID);
@@ -30,7 +19,6 @@ const WackAMole = () => {
   }, [hits, grid]);
 
   useEffect(() => {
-    console.log("????");
     const interval = setInterval(() => {
       const shuffledGrid = grid.sort(() => (Math.random() * 10 < 5 ? 1 : -1));
       setGrid([...shuffledGrid]);
@@ -43,9 +31,9 @@ const WackAMole = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setGrid(Array(12).fill(false));
+      setGrid(Array(GRID.length).fill(false));
       alert("Game Over");
-    }, 10000); // 1 min
+    }, 30000); // 1 min
 
     return () => clearTimeout(timeout);
   }, []);
