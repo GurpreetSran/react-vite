@@ -1,15 +1,17 @@
 import "./App.css";
-import MemoryGame from "./assignments/memory/intex";
-// import Assignment from "./assignments/assignment-1/assignment-1";
-import Tree from "./assignments/tree/index";
-import WackAMole from "./assignments/WackAMole";
+import Gift from "./challenges/Gift";
+import MemoryGame from "./challenges/memory/intex";
+// import Assignment from "./challenges/assignment-1/assignment-1";
+import Tree from "./challenges/tree/index";
+import WackAMole from "./challenges/WackAMole";
 
 function App() {
   return (
     <>
       {/* <Tree /> */}
       {/* <MemoryGame /> */}
-      <WackAMole />
+      {/* <WackAMole /> */}
+      <Gift />
     </>
   );
 }
