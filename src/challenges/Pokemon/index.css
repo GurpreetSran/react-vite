@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.buttonsContainer {
+  display: flex;
+  width: 100%;
+
+  button {
+    margin-right: 10px;
+  }
+}
