@@ -8,26 +8,6 @@ type PRESENTS = {
   id: number;
 };
 
-function canConstruct(ransomNote: string, magazine: string): boolean {
-  let magazineCopy = magazine;
-  for (const char of ransomNote) {
-    if (magazine.includes(char)) {
-      magazineCopy = magazineCopy.replace(char, "");
-    } else {
-      return false;
-    }
-  }
-  return true;
-}
-
-console.log("---> ", canConstruct("aa", "ab"));
-
-/*
-console.time("Execution Time");
-expensive(1 + 2);
-console.timeEnd("Execution Time");
-*/
-
 const PRESENTS: PRESENTS[] = [
   {
     presents: [],
