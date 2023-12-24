@@ -1,7 +1,8 @@
 import "./App.css";
 import Gift from "./challenges/Gift";
 import MemoryGame from "./challenges/memory/intex";
-import Pokemon from "./challenges/Pokemon/index";
+import Pagination from "./challenges/paggination";
+// import Pokemon from "./challenges/Pokemon/index";
 // import Assignment from "./challenges/assignment-1/assignment-1";
 import Tree from "./challenges/tree/index";
 import WackAMole from "./challenges/WackAMole";
@@ -13,7 +14,8 @@ function App() {
       {/* <MemoryGame /> */}
       {/* <WackAMole /> */}
       {/* <Gift /> */}
-      <Pokemon />
+      {/* <Pokemon /> */}
+      <Pagination />
     </>
   );
 }
