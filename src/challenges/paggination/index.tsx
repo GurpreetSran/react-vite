@@ -5,6 +5,25 @@ interface Todo {
   title: string;
 }
 
+function removeDuplicates(nums: number[]): number {
+  for (let i = 0; i < nums.length; i++) {
+    // debugger;
+
+    const index = nums.indexOf(nums[i]);
+
+    if (index !== i) {
+      nums.splice(i, 1);
+      i--;
+    }
+  }
+
+  console.log(nums);
+
+  return nums.length;
+}
+
+removeDuplicates([-1, 0, 0, 0, 0, 3, 3]);
+
 const Pagination = () => {
   const NoOfItems = 2;
 
