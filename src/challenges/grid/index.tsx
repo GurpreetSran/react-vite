@@ -8,6 +8,36 @@ for (let i = 0; i < SIZE; i++) {
   gridArray.push(Array.from({ length: SIZE }, () => ""));
 }
 
+function arrayChunk(arr: number[], size: number): number[][] {
+  const chunked = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (chunked.length === 0 || chunked.length === size) {
+      chunked.push([arr[i]]);
+    } else {
+    }
+  }
+
+  /*
+  SOL 2
+  const result = [];
+  for (let i = 0; i + size < arr.length + size; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
+  */
+  /*
+  SOL 1  
+  const result = [];
+  while (size < arr.length) {
+    result.push(arr.splice(0, size));
+  }
+  return [...result, [...arr]];
+  */
+}
+
+console.log(arrayChunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 2));
+
 const Grid = () => {
   const [board, setBoard] = useState(gridArray);
   const [currentPlayer, setCurrentPlayer] = useState<"X" | "Y">("X");
